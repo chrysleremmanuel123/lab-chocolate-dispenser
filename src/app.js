@@ -88,36 +88,82 @@ function dispenseChocolatesOfColor(chocolates, number, color) {
 
 
 //Progression 5: Display ___ chocolates of each color. Return array of numbers [green, silver, blue, crimson, purple, red, pink]
+// function noOfChocolates(chocolates) {
+//     var total = [];
+//     var color = ["green", "silver", "blue", "crimson", "purple", "red", "pink"]
+//     for (let i = 0; i < color.length; i++) {
+//         var count = 0;
+//         for (let j = 0; j < chocolates.length; j++) {
+//             if (color[i] == chocolates[j]) {
+//                 count++;
+//             }
+//             total[i] = count
+//         }
 
-
+//     }
+//     return total
+// }
+let input = ["green", "silver", "blue", "crimson", "purple", "red", "pink"];
+function noOfChocolates(input) {
+    let arr = [];
+    for (let i = 0; i < input.length; i++) {
+        let filteredArray = chocolates.filter(function (chocolate) {
+            return chocolate == input[i]
+        });
+        arr.push(filteredArray.length);
+    }
+    return arr;
+}
 //Progression 6: Sort chocolates based on count in each color. Return array of colors
 
 //Progression 7: Change ___ chocolates of ____ color to ____ color
-function changeChocolateColor(chocolates, number, color, finalColor) {
-    if (chocolates.length < number) {
-        return 'Insufficient chocolates in the dispenser';
-    } else if (number > 0) {
-        if (chocolates.length < number) {
-            return 'Insufficient chocolates in the dispenser';
-        } else if (number > 0) {
-            chocolates.map(function (index) {
-                if (index > 0) {
-                    finalColor = color;
-                    return finalColor;
+// function changeChocolateColor(chocolates, number, color, finalColor) {
+//     if (chocolates.length < number) {
+//         return 'Insufficient chocolates in the dispenser';
+//     } else if (number > 0) {
+//         if (chocolates.length < number) {
+//             return 'Insufficient chocolates in the dispenser';
+//         } else if (number > 0) {
+//             chocolates.map(function (index) {
+//                 if (index > 0) {
+//                     finalColor = color;
+//                     return finalColor;
 
-                }
-            });
+//                 }
+//             });
+//         }
+
+//     } else {
+//         return 'Number cannot be zero/negative';
+//     }
+// }
+function changeChocolateColor(chocolates, number, color, finalColor) {
+    if (color = finalColor) {
+        return "Please change the color of the chocolates"
+    } else if (number > 0) {
+        for (let i = 0; i < chocolates.length; i++) {
+            if (chocolates[i] == color) {
+                chocolates[i] = finalColor
+            }
         }
+        return chocolates
 
     } else {
-        return 'Number cannot be zero/negative';
+        return "Number cannot be zero/negative"
     }
 }
 
 
 
 //Progression 8: Change all chocolates of ____ color to ____ color and return [countOfChangedColor, chocolates]
-
+function changeChocolateColorAllOfxCount(chocolates, color, finalColor) {
+    for (let i = 0; i < chocolates.length; i++) {
+        if (chocolates[i] == color) {
+            chocolates.splice(i, 1, finalColor);
+        }
+    }
+    return chocolates;
+}
 
 //Challenge 1: Remove one chocolate of ____ color from the top
 
